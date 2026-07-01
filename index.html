@@ -368,11 +368,115 @@
   .diff-word{ padding: 0 1px; border-radius: 3px; }
   .diff-word.ok{ color: var(--paper); }
   .diff-word.miss{ color: var(--coral); text-decoration: line-through; opacity:0.8; }
+  .type-row{ display:flex; gap:8px; margin: 0 14px 12px; }
+  .type-input{
+    flex:1; background: var(--navy-3); border: 1px solid var(--line);
+    border-radius: 10px; padding: 10px 12px; color: var(--paper);
+    font-size: 14px; font-family:'Inter', sans-serif;
+  }
+  .type-input:focus{ outline: none; border-color: var(--amber); }
+  .check-btn{
+    flex-shrink:0; background: var(--amber); color: var(--ink); border:none;
+    border-radius: 10px; padding: 0 16px; font-weight:700; cursor:pointer;
+    font-family:'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.5px;
+  }
   .no-support{
     margin: 0 14px 14px; padding: 12px 14px; border-radius: 10px;
     background: rgba(232,101,74,0.1); border: 1px solid rgba(232,101,74,0.3);
     font-size: 12.5px; color: var(--paper-dim); font-family:'IBM Plex Mono', monospace; line-height:1.6;
   }
+
+  /* ---------- Roleplay entry ---------- */
+  .roleplay-cta{
+    margin: 4px 14px 24px;
+    padding: 18px 16px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255,200,87,0.14), rgba(53,160,143,0.10));
+    border: 1px solid rgba(255,200,87,0.35);
+    display:flex; align-items:center; gap:14px;
+    cursor:pointer;
+  }
+  .roleplay-cta .icon{ font-size: 28px; flex-shrink:0; }
+  .roleplay-cta .txt .title{
+    font-family:'Big Shoulders Display', sans-serif; font-weight:800; font-size:18px;
+    color: var(--amber); text-transform:uppercase; letter-spacing:0.5px; line-height:1.1;
+  }
+  .roleplay-cta .txt .sub{ font-size:12.5px; color: var(--paper-dim); margin-top:3px; }
+
+  /* ---------- Character badge cards ---------- */
+  .crew-grid{ padding: 6px 14px 30px; display:flex; flex-direction:column; gap:12px; }
+  .crew-card{
+    display:flex; align-items:center; gap:14px;
+    background: var(--navy-2); border: 1px solid var(--line); border-radius: 14px;
+    padding: 12px 14px; cursor:pointer;
+  }
+  .crew-card:active{ background: var(--navy-3); }
+  .avatar-badge{
+    flex-shrink:0; width:64px; height:64px; border-radius: 14px;
+    background: var(--navy-3); border: 1px solid var(--line); overflow:hidden;
+  }
+  .avatar-badge svg{ width:100%; height:100%; display:block; }
+  .crew-info .name{ font-family:'Big Shoulders Display', sans-serif; font-weight:800; font-size:19px; color:var(--paper); letter-spacing:0.3px; }
+  .crew-info .role{ font-size:12.5px; color: var(--amber-dim); font-family:'IBM Plex Mono', monospace; margin-top:2px; }
+  .crew-info .desc{ font-size:12px; color: var(--paper-dim); margin-top:4px; line-height:1.4; }
+  .crew-tag{
+    margin-left:auto; flex-shrink:0;
+    font-family:'IBM Plex Mono', monospace; font-size:10px; color: var(--paper-dim);
+    border: 1px solid var(--line); padding: 3px 7px; border-radius:6px;
+  }
+
+  /* ---------- Scene intro ---------- */
+  .scene-intro{ padding: 4px 14px 30px; }
+  .scene-hero{
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+    padding: 30px 20px 24px;
+    background: var(--navy-2); border:1px solid var(--line); border-radius:18px;
+    margin-bottom: 18px;
+  }
+  .scene-hero .avatar-big{ width:110px; height:110px; border-radius:50%; overflow:hidden; border:3px solid var(--amber); margin-bottom:14px; }
+  .scene-hero .avatar-big svg{ width:100%; height:100%; display:block; }
+  .scene-hero .name{ font-family:'Big Shoulders Display', sans-serif; font-weight:800; font-size:24px; color:var(--paper); }
+  .scene-hero .role{ font-size:13px; color:var(--amber-dim); font-family:'IBM Plex Mono', monospace; margin-top:2px; }
+  .scene-hero .scenario{ margin-top:14px; font-size:14px; color:var(--paper-dim); line-height:1.6; max-width: 320px; }
+
+  /* ---------- Roleplay chat ---------- */
+  .rp-chat{ padding: 4px 14px 20px; }
+  .rp-row{ display:flex; gap:10px; margin-bottom:16px; align-items:flex-end; }
+  .rp-row.user{ flex-direction:row-reverse; }
+  .rp-avatar{ width:36px; height:36px; border-radius:50%; overflow:hidden; flex-shrink:0; border:1px solid var(--line); }
+  .rp-avatar svg{ width:100%; height:100%; display:block; }
+  .rp-avatar.you{ background: var(--amber); display:flex; align-items:center; justify-content:center; font-size:16px; }
+  .rp-bubble{ max-width: 74%; }
+  .rp-bubble .line{
+    background: var(--navy-2); border:1px solid var(--line); border-radius:14px; border-bottom-left-radius:4px;
+    padding:10px 13px; font-size:14.5px; line-height:1.45; color:var(--paper);
+  }
+  .rp-row.user .rp-bubble .line{
+    background: var(--amber); color: var(--ink); border-bottom-left-radius:14px; border-bottom-right-radius:4px;
+  }
+  .rp-bubble .kr{ font-size:12px; color:var(--paper-dim); margin-top:4px; }
+  .rp-bubble .kr.you{ text-align:right; }
+
+  .rp-prompt{
+    background: var(--navy-2); border:1px solid var(--amber-dim); border-radius:16px;
+    padding: 16px 16px 14px; margin: 4px 0 20px;
+  }
+  .rp-prompt .label{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--amber); margin-bottom:8px; }
+  .rp-prompt .kr-target{ font-size:16px; color:var(--paper); line-height:1.5; margin-bottom:4px; }
+  .rp-prompt .hint{ font-size:12px; color:var(--paper-dim); margin-bottom:12px; }
+  .rp-mic-row{ display:flex; justify-content:center; }
+  .rp-mic-row .mic-btn{ width:56px; height:56px; font-size:22px; }
+  .rp-skip{ text-align:center; margin-top:12px; }
+  .rp-skip button{
+    background:none; border:none; color: var(--paper-dim); font-family:'IBM Plex Mono', monospace;
+    font-size:12px; text-decoration:underline; cursor:pointer;
+  }
+
+  .rp-summary{ text-align:center; padding: 30px 16px; }
+  .rp-summary .avatar-big{ width:90px; height:90px; border-radius:50%; overflow:hidden; margin: 0 auto 16px; border:3px solid var(--teal); }
+  .rp-summary .avatar-big svg{ width:100%; height:100%; display:block; }
+  .rp-summary .score{ font-family:'Big Shoulders Display', sans-serif; font-size:34px; color:var(--amber); font-weight:800; }
+  .rp-summary p{ color:var(--paper-dim); font-size:13.5px; margin-top:8px; line-height:1.6; }
 </style>
 </head>
 <body>
@@ -394,7 +498,35 @@
       </div>
       <div id="rows"></div>
     </main>
+    <div class="roleplay-cta" id="roleplayCta">
+      <div class="icon">🎭</div>
+      <div class="txt">
+        <div class="title">Talk to a Local</div>
+        <div class="sub">가상 인물과 실제 대화하듯 롤플레이 연습하기</div>
+      </div>
+    </div>
     <footer class="hint">TAP A DESTINATION TO BOARD · 표현을 익히고 연습 모드로 확인하세요</footer>
+  </div>
+
+  <!-- CHARACTER LIST VIEW -->
+  <div class="view" id="view-characters">
+    <div class="backbar"><button class="backbtn" onclick="goHome()">← BOARD</button></div>
+    <div class="section-label">캐스팅 · CHOOSE SOMEONE TO TALK TO</div>
+    <div class="crew-grid" id="crewGrid"></div>
+  </div>
+
+  <!-- SCENE INTRO VIEW -->
+  <div class="view" id="view-scene-intro">
+    <div class="backbar"><button class="backbtn" onclick="showView('view-characters')">← CAST</button></div>
+    <div class="scene-intro" id="sceneIntroBody"></div>
+  </div>
+
+  <!-- ROLEPLAY VIEW -->
+  <div class="view" id="view-roleplay">
+    <div class="backbar"><button class="backbtn" onclick="exitRoleplay()">← CAST</button></div>
+    <div class="quiz-progress" style="margin:16px 14px 0;"><div id="rpBar"></div></div>
+    <div class="rp-chat" id="rpChat"></div>
+    <div id="rpPromptArea"></div>
   </div>
 
   <!-- DETAIL VIEW -->
@@ -562,6 +694,140 @@ const CATEGORIES = [
   }
 ];
 
+/* ---------------- CHARACTERS (roleplay) ---------------- */
+const CHARACTERS = [];
+
+function svgAvatar({bg, skin, outfit, hair, hairColor, accessory, accColor}){
+  const hairShapes = {
+    'short-side': `<path d="M38,55 Q40,20 80,18 Q120,20 122,55 Q122,40 105,32 Q95,42 80,40 Q65,42 55,32 Q38,40 38,55 Z" fill="${hairColor}"/>`,
+    'bun': `<path d="M36,58 Q38,22 80,20 Q122,22 124,58 Q122,44 108,34 Q96,44 80,42 Q64,44 52,34 Q38,44 36,58 Z" fill="${hairColor}"/><circle cx="80" cy="16" r="13" fill="${hairColor}"/>`,
+    'curly': `<circle cx="46" cy="42" r="12" fill="${hairColor}"/><circle cx="60" cy="28" r="13" fill="${hairColor}"/><circle cx="80" cy="22" r="14" fill="${hairColor}"/><circle cx="100" cy="28" r="13" fill="${hairColor}"/><circle cx="114" cy="42" r="12" fill="${hairColor}"/><circle cx="55" cy="52" r="10" fill="${hairColor}"/><circle cx="105" cy="52" r="10" fill="${hairColor}"/>`,
+    'short-neat': `<path d="M37,52 Q39,18 80,16 Q121,18 123,52 Q121,36 100,30 L100,22 Q80,14 60,22 L60,30 Q39,36 37,52 Z" fill="${hairColor}"/>`,
+    'wavy-long': `<path d="M32,90 Q28,40 45,25 Q60,10 80,10 Q100,10 115,25 Q132,40 128,90 Q124,70 116,60 Q120,45 105,32 Q95,42 80,40 Q65,42 55,32 Q40,45 44,60 Q36,70 32,90 Z" fill="${hairColor}"/>`,
+    'ponytail': `<path d="M38,54 Q40,20 80,18 Q120,20 122,54 Q122,40 105,32 Q95,42 80,40 Q65,42 55,32 Q38,40 38,54 Z" fill="${hairColor}"/><path d="M118,40 Q140,55 132,90 Q126,72 112,58 Z" fill="${hairColor}"/>`
+  };
+  let accessorySvg = '';
+  if(accessory === 'glasses'){
+    accessorySvg = `<rect x="52" y="66" width="24" height="18" rx="8" fill="none" stroke="${accColor}" stroke-width="3"/><rect x="84" y="66" width="24" height="18" rx="8" fill="none" stroke="${accColor}" stroke-width="3"/><line x1="76" y1="74" x2="84" y2="74" stroke="${accColor}" stroke-width="3"/>`;
+  } else if(accessory === 'earrings'){
+    accessorySvg = `<circle cx="40" cy="82" r="3.5" fill="${accColor}"/><circle cx="120" cy="82" r="3.5" fill="${accColor}"/>`;
+  } else if(accessory === 'tie'){
+    accessorySvg = `<path d="M74,110 L86,110 L82,150 L80,158 L78,150 Z" fill="${accColor}"/>`;
+  } else if(accessory === 'scarf'){
+    accessorySvg = `<path d="M50,108 Q80,124 110,108 L112,122 Q80,138 48,122 Z" fill="${accColor}"/>`;
+  } else if(accessory === 'freckles'){
+    accessorySvg = `<circle cx="60" cy="80" r="1.6" fill="#B5794F"/><circle cx="66" cy="84" r="1.6" fill="#B5794F"/><circle cx="94" cy="80" r="1.6" fill="#B5794F"/><circle cx="100" cy="84" r="1.6" fill="#B5794F"/>`;
+  }
+  return `<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+    <rect width="160" height="160" fill="${bg}"/>
+    <path d="M14,160 Q80,104 146,160 Z" fill="${outfit}"/>
+    <rect x="68" y="92" width="24" height="26" fill="${skin}"/>
+    <circle cx="80" cy="68" r="40" fill="${skin}"/>
+    <circle cx="42" cy="70" r="6" fill="${skin}"/>
+    <circle cx="118" cy="70" r="6" fill="${skin}"/>
+    ${hairShapes[hair] || ''}
+    <ellipse cx="64" cy="68" rx="4.5" ry="5.5" fill="#3A2A20"/>
+    <ellipse cx="96" cy="68" rx="4.5" ry="5.5" fill="#3A2A20"/>
+    <path d="M60,58 Q64,54 70,57" stroke="#3A2A20" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M90,57 Q96,54 100,58" stroke="#3A2A20" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M68,90 Q80,98 92,90" stroke="#8A4A3A" stroke-width="3" fill="none" stroke-linecap="round"/>
+    ${accessorySvg}
+  </svg>`;
+}
+
+CHARACTERS.push(
+  {
+    id:'daniel', name:'Daniel', role:'Airport Ground Staff', kr:'공항 지상직원', tag:'TRV',
+    desc:'효율적이고 다정한 성격. 급한 승객도 침착하게 도와줘요.',
+    avatar: svgAvatar({bg:'#1D3D61', skin:'#D9A574', outfit:'#274B7A', hair:'short-side', hairColor:'#2B2320', accessory:'glasses', accColor:'#1A1A1A'}),
+    scenario:'환승 시간이 빠듯한 상황에서 데스크 직원 Daniel과 대화합니다.',
+    lines:[
+      {who:'char', en:"Hey there! Rough day at the gate, huh? What can I help you with?", kr:"안녕하세요! 게이트에서 힘든 하루죠? 뭘 도와드릴까요?"},
+      {who:'user', en:"I think I might miss my connecting flight. Is there anything you can do?", kr:"환승 비행기를 놓칠 것 같아요. 도와주실 수 있나요?"},
+      {who:'char', en:"Let me pull up your booking... Okay, I see it — you've got about twenty minutes.", kr:"예약 확인해볼게요... 아, 보이네요 — 20분 정도 남았어요."},
+      {who:'user', en:"Twenty minutes? That's cutting it close. Which gate do I need?", kr:"20분이요? 아슬아슬하네요. 어느 게이트로 가야 하나요?"},
+      {who:'char', en:"Gate 14, just past the food court. I'll call ahead so they know you're coming.", kr:"14번 게이트예요, 푸드코트 지나서요. 미리 전화해서 오신다고 알려둘게요."},
+      {who:'user', en:"That would be amazing, thank you so much.", kr:"정말 감사해요, 큰 도움이 되겠어요."},
+      {who:'char', en:"No problem at all. Safe travels, and run if you can!", kr:"별말씀을요. 안전한 여행 되시고, 가능하면 뛰어가세요!"}
+    ]
+  },
+  {
+    id:'sophia', name:'Sophia', role:'Hotel Concierge', kr:'호텔 컨시어지', tag:'HTL',
+    desc:'정중하고 세련된 태도. 손님의 요청을 완벽하게 처리해요.',
+    avatar: svgAvatar({bg:'#3A2440', skin:'#F0CBA0', outfit:'#5C2233', hair:'bun', hairColor:'#C9A24B', accessory:'earrings', accColor:'#F3E3B0'}),
+    scenario:'호텔 로비에서 컨시어지 Sophia에게 저녁 식당을 추천받습니다.',
+    lines:[
+      {who:'char', en:"Good evening. How may I make your stay a little more special tonight?", kr:"안녕하세요. 오늘 밤 머무시는 동안 무엇을 더 특별하게 해드릴까요?"},
+      {who:'user', en:"Could you recommend a quiet place nearby for dinner?", kr:"근처에 조용히 저녁 먹을 만한 곳을 추천해 주시겠어요?"},
+      {who:'char', en:"Of course. There's a lovely little bistro two blocks from here, very intimate.", kr:"물론이죠. 여기서 두 블록 떨어진 곳에 아늑한 작은 비스트로가 있어요."},
+      {who:'user', en:"That sounds perfect. Would I need a reservation?", kr:"완벽할 것 같네요. 예약이 필요할까요?"},
+      {who:'char', en:"I'll take care of that for you right now, if you'd like.", kr:"원하시면 지금 바로 예약을 잡아드릴게요."},
+      {who:'user', en:"I'd really appreciate that, thank you.", kr:"정말 감사드려요."},
+      {who:'char', en:"My pleasure. You're all set for eight o'clock.", kr:"천만에요. 8시로 예약해 두었습니다."}
+    ]
+  },
+  {
+    id:'leo', name:'Leo', role:'Restaurant Server', kr:'레스토랑 서버', tag:'RST',
+    desc:'느긋하고 유쾌한 성격. 손님과 편하게 농담도 주고받아요.',
+    avatar: svgAvatar({bg:'#3D2A1D', skin:'#C08A5C', outfit:'#8A6A3A', hair:'curly', hairColor:'#1C140F', accessory:'none', accColor:'#000'}),
+    scenario:'저녁 식당에서 서버 Leo와 메뉴에 대해 이야기합니다.',
+    lines:[
+      {who:'char', en:"Hey! Welcome in. First time here, or are you a regular I forgot?", kr:"안녕하세요! 어서 오세요. 처음이신가요, 아니면 제가 잊어버린 단골이신가요?"},
+      {who:'user', en:"First time. What would you recommend that's not too spicy?", kr:"처음이에요. 너무 맵지 않은 걸로 추천해주실 수 있나요?"},
+      {who:'char', en:"Honestly, the grilled salmon is a crowd favorite, and it's not spicy at all.", kr:"솔직히 구운 연어가 인기가 많아요, 전혀 맵지 않고요."},
+      {who:'user', en:"Could we start with some water, please?", kr:"먼저 물 좀 주시겠어요?"},
+      {who:'char', en:"Absolutely, still or sparkling?", kr:"물론이죠, 일반 물로 드릴까요 탄산수로 드릴까요?"},
+      {who:'user', en:"Still is fine, thanks.", kr:"일반 물로 주세요, 감사합니다."},
+      {who:'char', en:"Coming right up. I'll grab that salmon order too.", kr:"바로 가져다드릴게요. 연어 주문도 같이 넣어둘게요."}
+    ]
+  },
+  {
+    id:'marcus', name:'Marcus', role:'Business Colleague', kr:'비즈니스 동료', tag:'BIZ',
+    desc:'명확하고 자신감 있는 태도. 회의를 효율적으로 이끌어요.',
+    avatar: svgAvatar({bg:'#1A2233', skin:'#8A5A3A', outfit:'#2E3B4E', hair:'short-neat', hairColor:'#0F0B08', accessory:'tie', accColor:'#7A1F2B'}),
+    scenario:'화상 회의 시작 전, 동료 Marcus와 안건에 대해 이야기합니다.',
+    lines:[
+      {who:'char', en:"Thanks for making the time to meet today. Ready to dive in?", kr:"오늘 시간 내주셔서 감사합니다. 바로 시작할까요?"},
+      {who:'user', en:"Sure. Could you walk us through the numbers on slide three?", kr:"네. 세 번째 슬라이드 수치를 좀 설명해 주시겠어요?"},
+      {who:'char', en:"Of course. Revenue's up twelve percent, mostly from the new region.", kr:"물론이죠. 매출이 12퍼센트 올랐어요, 대부분 새 지역 덕분이에요."},
+      {who:'user', en:"That's great. Can we get a rough timeline for the next phase?", kr:"좋네요. 다음 단계에 대한 대략적인 일정을 알 수 있을까요?"},
+      {who:'char', en:"I'd say six weeks, assuming the team stays fully staffed.", kr:"팀 인력이 그대로 유지된다면 6주 정도로 보고 있어요."},
+      {who:'user', en:"Sounds reasonable. I'll follow up with the details over email.", kr:"합리적이네요. 세부 사항은 이메일로 다시 전달드릴게요."},
+      {who:'char', en:"Perfect, talk soon.", kr:"좋습니다, 곧 다시 얘기해요."}
+    ]
+  },
+  {
+    id:'grace', name:'Grace', role:'Boutique Owner', kr:'부티크 사장', tag:'SHP',
+    desc:'따뜻하고 세심함. 손님 취향을 금방 알아채요.',
+    avatar: svgAvatar({bg:'#2E3A2A', skin:'#F0CBA0', outfit:'#3D6B4A', hair:'wavy-long', hairColor:'#8A3B22', accessory:'scarf', accColor:'#D98A4A'}),
+    scenario:'작은 부티크에서 사장님 Grace와 옷을 살펴봅니다.',
+    lines:[
+      {who:'char', en:"Welcome in! Let me know if anything catches your eye.", kr:"어서 오세요! 마음에 드는 게 있으면 말씀해 주세요."},
+      {who:'user', en:"Do you have this jacket in a different size?", kr:"이 재킷 다른 사이즈로 있나요?"},
+      {who:'char', en:"Let me check the back for you — I think we have one more.", kr:"뒤에서 확인해 볼게요 — 하나 더 있을 것 같아요."},
+      {who:'user', en:"Thank you. Could I try it on before I decide?", kr:"감사해요. 결정하기 전에 입어봐도 될까요?"},
+      {who:'char', en:"Of course, the fitting room is right over there.", kr:"물론이죠, 탈의실은 바로 저기예요."},
+      {who:'user', en:"Perfect. Is this jacket on sale, by the way?", kr:"좋아요. 그런데 이 재킷 할인 중인가요?"},
+      {who:'char', en:"It is, actually — twenty percent off through the weekend.", kr:"맞아요 — 주말까지 20퍼센트 할인 중이에요."}
+    ]
+  },
+  {
+    id:'emma', name:'Emma', role:'Friendly Neighbor', kr:'다정한 이웃', tag:'SML',
+    desc:'편안하고 수다스러움. 처음 만나도 금방 친해져요.',
+    avatar: svgAvatar({bg:'#3A2E1A', skin:'#F0CBA0', outfit:'#C9A227', hair:'ponytail', hairColor:'#6B4423', accessory:'freckles', accColor:'#000'}),
+    scenario:'동네 카페 앞에서 우연히 만난 이웃 Emma와 스몰토크를 나눕니다.',
+    lines:[
+      {who:'char', en:"Hey, it's been a while — how have you been?", kr:"안녕하세요, 오랜만이네요 — 어떻게 지내셨어요?"},
+      {who:'user', en:"Pretty good, just been busy with work mostly.", kr:"잘 지냈어요, 그냥 일 때문에 좀 바빴어요."},
+      {who:'char', en:"I hear you. How was your weekend, anything fun?", kr:"그렇군요. 주말은 어땠어요, 재미있는 거 하셨어요?"},
+      {who:'user', en:"Actually yes, I'm heading on a trip next month, so I was planning.", kr:"사실 있어요, 다음 달에 여행 가서 계획 좀 세웠어요."},
+      {who:'char', en:"No way, that sounds exciting! Where are you headed?", kr:"우와, 정말 신나겠어요! 어디로 가세요?"},
+      {who:'user', en:"I haven't decided yet, but I'll definitely let you know.", kr:"아직 정하진 않았는데, 정하면 꼭 알려드릴게요."},
+      {who:'char', en:"Please do, I'd love to hear all about it!", kr:"꼭 알려주세요, 다 듣고 싶어요!"}
+    ]
+  }
+);
+
 /* ---------------- STATE ---------------- */
 const STORAGE_KEY = 'phrasebook_progress_v1';
 function loadProgress(){
@@ -631,6 +897,8 @@ function goHome(){
   document.getElementById('headerSub').textContent = '상황별 영어회화 · 중급';
   renderHome();
   showView('view-home');
+  const cta = document.getElementById('roleplayCta');
+  if(cta) cta.onclick = openCharacters;
 }
 function openCategory(id){
   currentCat = CATEGORIES.find(c => c.id === id);
@@ -656,6 +924,12 @@ function openCategory(id){
 
   const list = document.getElementById('phraseList');
   list.innerHTML = '';
+  if(!window.isSecureContext){
+    const warn = document.createElement('div');
+    warn.className = 'no-support';
+    warn.textContent = '⚠️ 이 페이지는 저장된 파일로 열려 있어서 마이크가 작동하지 않아요. 링크를 눌러서 바로 열어주세요 (다운로드하지 마세요).';
+    list.appendChild(warn);
+  }
   currentCat.phrases.forEach((p, idx) => {
     const card = document.createElement('div');
     card.className = 'phrase-card';
@@ -730,14 +1004,14 @@ function scoreAndDiff(target, heard){
   return { score, html: spans.join(' ') };
 }
 
-function practiceSpeaking(targetText, btnEl, feedbackEl){
+function practiceSpeaking(targetText, btnEl, feedbackEl, onDone){
   feedbackEl.classList.add('show');
   if(!window.isSecureContext){
-    feedbackEl.innerHTML = `<div class="verdict bad">HTTPS 필요</div><div class="heard">마이크를 쓸 수 없는 환경이에요.</div>`;
+    feedbackEl.innerHTML = `<div class="verdict bad">HTTPS 필요</div><div class="heard">이 페이지가 저장된 파일(content:// 또는 file://)로 열려 있어서 마이크를 쓸 수 없어요. 링크를 눌러서 직접 열어주세요 (다운로드하지 말고).</div>`;
     return;
   }
   if(!SpeechRecognitionAPI){
-    feedbackEl.innerHTML = `<div class="verdict bad">지원 안 됨</div><div class="heard">이 브라우저는 음성 인식을 지원하지 않아요.</div>`;
+    feedbackEl.innerHTML = `<div class="verdict bad">지원 안 됨</div><div class="heard">이 브라우저는 음성 인식을 지원하지 않아요. Android는 Chrome, iPhone은 Safari 최신 버전을 사용해보세요.</div>`;
     return;
   }
   if(btnEl.classList.contains('listening')) return;
@@ -759,10 +1033,11 @@ function practiceSpeaking(targetText, btnEl, feedbackEl){
       <div class="heard">인식된 문장: "${heard}"</div>
       <div style="margin-top:6px;">${html}</div>
     `;
+    if(typeof onDone === 'function') onDone(score);
   };
   recognition.onerror = (event) => {
     let msg = '음성을 인식하지 못했어요. 다시 시도해주세요.';
-    if(event.error === 'not-allowed') msg = '마이크 권한이 차단되어 있어요. 주소창 왼쪽 자물쇠 아이콘 → 권한에서 마이크를 허용으로 바꿔주세요.';
+    if(event.error === 'not-allowed') msg = '마이크 권한이 차단되어 있어요. 주소창 왼쪽 자물쇠(또는 ⓘ) 아이콘 → 권한에서 마이크를 허용으로 바꿔주세요.';
     if(event.error === 'no-speech') msg = '음성이 감지되지 않았어요. 조금 더 크게 말해보세요.';
     feedbackEl.innerHTML = `<div class="verdict bad">오류</div><div class="heard">${msg}</div>`;
   };
@@ -775,6 +1050,7 @@ function practiceSpeaking(targetText, btnEl, feedbackEl){
 /* ---------------- QUIZ ---------------- */
 function startQuiz(){
   quizQueue = currentCat.phrases.map((p, i) => ({...p, idx:i}));
+  // shuffle
   for(let i = quizQueue.length -1; i>0; i--){
     const j = Math.floor(Math.random()*(i+1));
     [quizQueue[i], quizQueue[j]] = [quizQueue[j], quizQueue[i]];
@@ -845,6 +1121,144 @@ function answer(known, phraseIdx){
   if(known) quizKnownCount++;
   quizIndex++;
   renderQuizCard();
+}
+
+/* ---------------- ROLEPLAY (character conversation) ---------------- */
+let currentCharacter = null;
+let rpLineIndex = 0;
+let rpScores = [];
+
+function renderCrewList(){
+  const grid = document.getElementById('crewGrid');
+  grid.innerHTML = '';
+  CHARACTERS.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'crew-card';
+    card.onclick = () => openCharacterIntro(c.id);
+    card.innerHTML = `
+      <div class="avatar-badge">${c.avatar}</div>
+      <div class="crew-info">
+        <div class="name">${c.name}</div>
+        <div class="role">${c.role}</div>
+        <div class="desc">${c.desc}</div>
+      </div>
+      <div class="crew-tag">${c.tag}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function openCharacters(){
+  document.getElementById('headerTitle').textContent = 'CAST';
+  document.getElementById('headerSub').textContent = '가상 인물과 대화 연습';
+  renderCrewList();
+  showView('view-characters');
+}
+
+function openCharacterIntro(id){
+  currentCharacter = CHARACTERS.find(c => c.id === id);
+  document.getElementById('headerTitle').textContent = currentCharacter.tag;
+  document.getElementById('headerSub').textContent = currentCharacter.name + ' · ' + currentCharacter.role;
+  document.getElementById('sceneIntroBody').innerHTML = `
+    <div class="scene-hero">
+      <div class="avatar-big">${currentCharacter.avatar}</div>
+      <div class="name">${currentCharacter.name}</div>
+      <div class="role">${currentCharacter.role} · ${currentCharacter.kr}</div>
+      <div class="scenario">${currentCharacter.scenario}</div>
+    </div>
+    <button class="cta" id="startRoleplayBtn">대화 시작</button>
+  `;
+  document.getElementById('startRoleplayBtn').onclick = startRoleplay;
+  showView('view-scene-intro');
+}
+
+function startRoleplay(){
+  rpLineIndex = 0;
+  rpScores = [];
+  document.getElementById('headerSub').textContent = currentCharacter.name + ' · 롤플레이 진행 중';
+  document.getElementById('rpChat').innerHTML = '';
+  showView('view-roleplay');
+  advanceRoleplay();
+}
+
+function exitRoleplay(){
+  openCharacterIntro(currentCharacter.id);
+}
+
+function appendChatBubble(who, en, kr){
+  const chat = document.getElementById('rpChat');
+  const row = document.createElement('div');
+  row.className = 'rp-row ' + (who === 'user' ? 'user' : 'char');
+  const avatarHtml = who === 'user'
+    ? `<div class="rp-avatar you">🙂</div>`
+    : `<div class="rp-avatar">${currentCharacter.avatar}</div>`;
+  row.innerHTML = `
+    ${avatarHtml}
+    <div class="rp-bubble">
+      <div class="line">${en}</div>
+      <div class="kr ${who === 'user' ? 'you' : ''}">${kr}</div>
+    </div>
+  `;
+  chat.appendChild(row);
+  chat.scrollIntoView({behavior:'smooth', block:'end'});
+}
+
+function advanceRoleplay(){
+  const bar = document.getElementById('rpBar');
+  bar.style.width = Math.round((rpLineIndex/currentCharacter.lines.length)*100) + '%';
+
+  if(rpLineIndex >= currentCharacter.lines.length){
+    renderRoleplaySummary();
+    return;
+  }
+  const line = currentCharacter.lines[rpLineIndex];
+  if(line.who === 'char'){
+    appendChatBubble('char', line.en, line.kr);
+    speak(line.en);
+    document.getElementById('rpPromptArea').innerHTML = `
+      <div class="cta-row"><button class="cta" id="rpNextBtn">다음</button></div>
+    `;
+    document.getElementById('rpNextBtn').onclick = () => { rpLineIndex++; advanceRoleplay(); };
+  } else {
+    document.getElementById('rpPromptArea').innerHTML = `
+      <div class="rp-prompt">
+        <div class="label">YOUR LINE</div>
+        <div class="kr-target">${line.kr}</div>
+        <div class="hint">이 뜻을 영어로 말해보세요</div>
+        <div class="rp-mic-row"><button class="mic-btn" id="rpMicBtn">🎙️</button></div>
+        <div class="speak-feedback" id="rpFeedback"></div>
+        <div class="rp-skip"><button id="rpSkipBtn">그냥 넘어가기</button></div>
+      </div>
+    `;
+    const fb = document.getElementById('rpFeedback');
+    document.getElementById('rpMicBtn').onclick = (e) => {
+      practiceSpeaking(line.en, e.currentTarget, fb, (score) => {
+        rpScores.push(score);
+        appendChatBubble('user', line.en, line.kr);
+        setTimeout(() => { rpLineIndex++; advanceRoleplay(); }, 900);
+      });
+    };
+    document.getElementById('rpSkipBtn').onclick = () => {
+      appendChatBubble('user', line.en, line.kr);
+      rpLineIndex++;
+      advanceRoleplay();
+    };
+  }
+}
+
+function renderRoleplaySummary(){
+  document.getElementById('headerSub').textContent = currentCharacter.name + ' · 대화 완료';
+  const avg = rpScores.length ? Math.round(rpScores.reduce((a,b)=>a+b,0)/rpScores.length) : 0;
+  document.getElementById('rpPromptArea').innerHTML = `
+    <div class="rp-summary">
+      <div class="avatar-big">${currentCharacter.avatar}</div>
+      <div class="score">${avg}%</div>
+      <p>${currentCharacter.name}와의 대화를 완주했어요.<br>평균 발음 일치율이에요.</p>
+      <div class="cta-row" style="padding:20px 0 0;">
+        <button class="cta" onclick="startRoleplay()">다시 대화하기</button>
+      </div>
+    </div>
+  `;
 }
 
 /* ---------------- INIT ---------------- */
